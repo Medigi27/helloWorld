@@ -10,9 +10,10 @@ public class Controller {
     private String HELLO_WORLD = "Hello world";
 
     @GetMapping(value = "/")
-    public String printHelloWorld() {
-        System.out.println("Вызван hello world");
-        //return new ResponseEntity<>("Hello World", HttpStatus.OK);
-        return HELLO_WORLD;
+    public ResponseEntity printHelloWorld() {
+        ResponseEntity responseEntity = new ResponseEntity<>(HELLO_WORLD, HttpStatus.OK);
+        return responseEntity;
+
+
     }
 }
